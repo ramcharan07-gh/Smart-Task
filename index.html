@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Smart Task</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">✦</span><span>Smart Task</span></div>
+        <p class="sidebar-label">Workspace</p>
+        <nav>
+          <button class="nav-item active" data-view="today"><span>⌂</span>Today <b>5</b></button>
+          <button class="nav-item" data-view="inbox"><span>✦</span>AI Inbox <b>2</b></button>
+          <button class="nav-item" data-view="matrix"><span>⊞</span>Priority Matrix</button>
+          <button class="nav-item" data-view="schedule"><span>◷</span>Smart Schedule</button>
+        </nav>
+        <p class="sidebar-label">Focus</p>
+        <nav>
+          <button class="nav-item" data-view="insights"><span>↗</span>Insights</button>
+        </nav>
+        <div class="sidebar-footer"><div class="avatar">R</div><div><strong>Ram</strong><small>Personal workspace</small></div><span>⋯</span></div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="mobile-menu" aria-label="Open menu">☰</button>
+          <div class="breadcrumb">Workspace <span>/</span> <strong id="view-title">Today</strong></div>
+          <div class="top-actions"><button class="icon-button" title="Notifications">♢</button><button class="avatar small">R</button></div>
+        </header>
+
+        <section class="content" id="app-content">
+          <div class="welcome-row">
+            <div><p class="eyebrow">SATURDAY, SEPTEMBER 5, 2026</p><h1>Good afternoon, Ram <span>👋</span></h1><p class="muted">Here’s your intelligent plan for the rest of the day.</p></div>
+            <button class="primary-button" id="new-task"><span>＋</span> New task</button>
+          </div>
+
+          <div class="next-action card">
+            <div class="next-copy"><div class="section-kicker"><span class="pulse"></span> NEXT BEST ACTION</div><h2 id="next-task">Finish authentication API</h2><p class="muted">Your highest-impact task right now</p><div class="reasons"><span>⏱ 45 min</span><span class="priority-dot">●</span><span>High priority</span><span>•</span><span>Due tomorrow</span></div><button class="focus-button" id="start-focus">Start focus session <span>→</span></button></div>
+            <div class="score-ring"><strong>82</strong><small>priority</small></div>
+            <button class="why-button" id="why-button">Why this task? <span>↗</span></button>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card"><span class="stat-icon red">!</span><div><strong>3</strong><span>Urgent tasks</span></div><em>+1 today</em></div>
+            <div class="stat-card"><span class="stat-icon blue">◷</span><div><strong>4h 20m</strong><span>Planned focus</span></div><em>5h 30m available</em></div>
+            <div class="stat-card"><span class="stat-icon purple">✓</span><div><strong>68%</strong><span>Day capacity</span></div><em>On track</em></div>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="card tasks-card"><div class="card-heading"><div><h3>Today’s tasks</h3><p class="muted">Prioritized by Smart Task AI</p></div><button class="text-button" data-view="matrix">View matrix →</button></div><div class="task-list" id="task-list"></div></section>
+            <section class="card reality-card"><div class="card-heading"><div><h3>Reality check</h3><p class="muted">Can your plan fit today?</p></div><span class="warning">!</span></div><div class="capacity"><div><strong>4h 20m</strong><span>planned</span></div><div class="capacity-bar"><i></i></div><div><strong>5h 30m</strong><span>available</span></div></div><p class="reality-good">✓ You have <strong>1h 10m</strong> of buffer today.</p><button class="outline-button" id="fix-plan">Review my plan <span>→</span></button></section>
+          </div>
+
+          <section class="card schedule-preview"><div class="card-heading"><div><h3>Smart schedule</h3><p class="muted">Your next time blocks</p></div><button class="text-button" data-view="schedule">Open schedule →</button></div><div class="timeline"><div class="time">4:00 PM</div><div class="timeline-item active-line"><span class="timeline-dot red-dot"></span><div><strong>Finish authentication API</strong><small>Focus session · 45 minutes</small></div><span class="tag high">Now</span></div><div class="time">5:00 PM</div><div class="timeline-item"><span class="timeline-dot blue-dot"></span><div><strong>DBMS assignment</strong><small>Deep work · 60 minutes</small></div><span class="tag">Scheduled</span></div></div></section>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modal"><div class="modal"><button class="modal-close" id="close-modal">×</button><div id="modal-content"></div></div></div>
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
